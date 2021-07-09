@@ -14,13 +14,21 @@ function computerPlay(choices) {
     return computerSelection
 }
 
+//TODO: - Simplify this function
 function playerSelection(choices) {
     let selection
+    let goodAnswer = true
     selection = window.prompt("Type your choice here")
     selection = selection.toLowerCase()
-    if (choices.indexOf(selection.toString()) === -1) {
-        selection = window.prompt("Not a valid entry, please choose one of the following: rock, paper, scissors")
-    } else {
+    if (choices.indexOf(selection) === -1) { // determines a NON-VALID entry
+        goodAnswer = false
+        while (goodAnswer !== true) {
+            selection = window.prompt("Not a valid entry, please choose one of the following: rock, paper, scissors")
+            if (choices.indexOf(selection) !== -1) {
+                goodAnswer = true
+            }
+        }
+    } else if (goodAnswer === true) {
         console.log("The user input after prompt is " + selection)
     }
     return selection
