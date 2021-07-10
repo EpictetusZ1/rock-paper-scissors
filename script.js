@@ -3,7 +3,6 @@ const choices = ["rock", "paper", "scissors"]
 function computerPlay(choices) {
     let computerSelection
     let randomNum = Math.floor(Math.random() * 100)
-    console.log(randomNum)
     if (randomNum < 33) {
         computerSelection = choices[0]
     } else if (randomNum > 33 && randomNum < 66) {
@@ -14,46 +13,74 @@ function computerPlay(choices) {
     return computerSelection
 }
 
-//TODO: - Simplify this function
 function playerSelection(choices) {
     let selection
     let goodAnswer = true
-    selection = window.prompt("Type your choice here")
-    selection = selection.toLowerCase()
-    if (choices.indexOf(selection) === -1) { // determines a NON-VALID entry
+    selection = window.prompt("Type your choice here").toLowerCase()
+    if (choices.indexOf(selection) === -1) { // Determines a NON-VALID entry
         goodAnswer = false
-        while (goodAnswer !== true) {
-            selection = window.prompt("Not a valid entry, please choose one of the following: rock, paper, scissors")
+        while (goodAnswer !== true) { // While not a valid answer, display prompt again
+            selection = window.prompt("Not a valid entry, please choose one of the following: rock, paper, scissors").toLowerCase()
             if (choices.indexOf(selection) !== -1) {
                 goodAnswer = true
             }
         }
-    } else if (goodAnswer === true) {
-        console.log("The user input after prompt is " + selection)
     }
     return selection
 }
 
 function gameResult(computerSelection, playerSelection) {
     if (computerSelection === playerSelection) {
-        console.log(`It's a Draw! You and the Computer Both Picked ${computerSelection}. Better Luck Next Time!`)
+        console.log(`It's a Draw! You and the Computer Both Picked ${computerSelection}.`)
     } else if (playerSelection === "rock" && computerSelection !== "paper") {
-        console.log(`Congratulations, You won! the Computer picked: ${computerSelection}`)
+        scoreTracker++
+        console.log(`Congratulations, You Won This round! The Computer picked: ${computerSelection}`)
     } else if (playerSelection === "paper" && computerSelection !== "scissors") {
-        console.log(`Congratulations, You won! the Computer picked: ${computerSelection}`)
+        scoreTracker++
+        console.log(`Congratulations, You Won This round! The Computer picked: ${computerSelection}`)
     } else if (playerSelection === "scissors" && computerSelection !== "rock") {
-        console.log(`Congratulations, You won! the Computer picked: ${computerSelection}`)
+        scoreTracker++
+        console.log(`Congratulations, You Won This round! The Computer picked: ${computerSelection}`)
     }  else {
-        console.log(`You Lost! the Computer picked: ${computerSelection}. Better Luck Next Time!`)
+        scoreTracker--
+        console.log(`You Lost This Round! the Computer picked: ${computerSelection}.`)
+    }
+    return scoreTracker
+}
+
+let scoreTracker = 0
+
+// TODO: Simply this function?
+
+function roundCounter(scoreTracker) {
+    let compWin = "The COMPUTER won the game! Wooo"
+    let humanWin = "You  WON the game! Woo"
+    for (let i = 1; i <=6; i++) {
+       if (scoreTracker === 3 ) {
+           console.log(humanWin)
+       } else if (scoreTracker === -3) {
+           console.log(compWin)
+       } else if (i < 5) {
+           scoreTracker = gameResult(computerPlay(choices), playerSelection(choices))
+           console.log(`It is currently round number: ${i}`)
+       } else if (i === 5) {
+           if (scoreTracker === 3) {
+               console.log(humanWin)
+           } else if (scoreTracker === -3) {
+               console.log(compWin)
+           }
+       } else {
+           if (scoreTracker > 0) {
+               console.log(humanWin)
+           }
+           else {
+               console.log(compWin)
+           }
+       }
     }
 }
 
-gameResult(computerPlay(choices), playerSelection(choices))
-
-
-
-
-
+roundCounter(scoreTracker)
 
 
 
