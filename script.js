@@ -50,30 +50,20 @@ function gameResult(computerSelection, playerSelection) {
 
 let scoreTracker = 0
 
-// TODO: Simply this function?
-
 function roundCounter(scoreTracker) {
-    let compWin = "The COMPUTER won the game! Wooo"
+    let compWin = "The COMPUTER won the game! Woo"
     let humanWin = "You  WON the game! Woo"
-    for (let i = 1; i <=6; i++) {
+    for (let i = 1; i <= 5; i++) {
+        console.log(`It is currently round number: ${i}`)
+        scoreTracker = gameResult(computerPlay(choices), playerSelection(choices))
        if (scoreTracker === 3 ) {
            console.log(humanWin)
        } else if (scoreTracker === -3) {
            console.log(compWin)
-       } else if (i < 5) {
-           scoreTracker = gameResult(computerPlay(choices), playerSelection(choices))
-           console.log(`It is currently round number: ${i}`)
        } else if (i === 5) {
-           if (scoreTracker === 3) {
+           if (scoreTracker >= 1) {
                console.log(humanWin)
-           } else if (scoreTracker === -3) {
-               console.log(compWin)
-           }
-       } else {
-           if (scoreTracker > 0) {
-               console.log(humanWin)
-           }
-           else {
+           } else if (scoreTracker <= -1 ) {
                console.log(compWin)
            }
        }
