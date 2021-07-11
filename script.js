@@ -17,9 +17,9 @@ function playerSelection(choices) {
     let selection
     let goodAnswer = true
     selection = window.prompt("Type your choice here").toLowerCase()
-    if (choices.indexOf(selection) === -1) { // Determines a NON-VALID entry
+    if (choices.indexOf(selection) === -1) { // Determines if NON-VALID entry
         goodAnswer = false
-        while (goodAnswer !== true) { // While not a valid answer, display prompt again
+        while (goodAnswer !== true) {
             selection = window.prompt("Not a valid entry, please choose one of the following: rock, paper, scissors").toLowerCase()
             if (choices.indexOf(selection) !== -1) {
                 goodAnswer = true
@@ -31,19 +31,19 @@ function playerSelection(choices) {
 
 function gameResult(computerSelection, playerSelection) {
     if (computerSelection === playerSelection) {
-        console.log(`It's a Draw! You and the Computer Both Picked ${computerSelection}.`)
+        console.log(`It's a Draw! You and The Computer Both Picked ${computerSelection}.`)
     } else if (playerSelection === "rock" && computerSelection !== "paper") {
         scoreTracker++
-        console.log(`Congratulations, You Won This round! The Computer picked: ${computerSelection}`)
+        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
     } else if (playerSelection === "paper" && computerSelection !== "scissors") {
         scoreTracker++
-        console.log(`Congratulations, You Won This round! The Computer picked: ${computerSelection}`)
+        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
     } else if (playerSelection === "scissors" && computerSelection !== "rock") {
         scoreTracker++
-        console.log(`Congratulations, You Won This round! The Computer picked: ${computerSelection}`)
+        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
     }  else {
         scoreTracker--
-        console.log(`You Lost This Round! the Computer picked: ${computerSelection}.`)
+        console.log(`You Lost This Round! The Computer picked: ${computerSelection}.`)
     }
     return scoreTracker
 }
@@ -65,6 +65,8 @@ function roundCounter(scoreTracker) {
                console.log(humanWin)
            } else if (scoreTracker <= -1 ) {
                console.log(compWin)
+           } else {
+               console.log("The game is a DRAW!")
            }
        }
     }
