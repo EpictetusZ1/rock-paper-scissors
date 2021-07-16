@@ -1,0 +1,52 @@
+@media (min-width: 500px) {
+    .mobile-intro-container {
+        /* Only Displays this Div when Screen is SMALLER than 500px wide*/
+        visibility: hidden;
+    }
+}
+
+.mobile-intro-container {
+    background: #466793;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.diagonal-box {
+    transform: skewY(-11deg);
+    height: 30vh;
+}
+
+.box-container {
+    margin: 0 auto;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.box-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    transform: skewY(11deg);
+    justify-content: center;
+}
+
+.box-1 {
+    background: #59a5ac;
+}
+
+.box-2 {
+    background: #6e5864;
+}
+
+.box-3 {
+    background: #42694a;
+}
+
+.player-image {
+    height: 110%;
+    width: auto;
+}

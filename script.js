@@ -72,7 +72,7 @@ function roundCounter(scoreTracker) {
     }
 }
 
-roundCounter(scoreTracker)
+// roundCounter(scoreTracker)
 
 
 
