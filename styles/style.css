@@ -34,19 +34,30 @@
     justify-content: center;
 }
 
-.box-1 {
+#box-1 {
     background: #59a5ac;
 }
 
-.box-2 {
+#box-2 {
     background: #6e5864;
 }
 
-.box-3 {
+#box-3 {
     background: #42694a;
 }
 
 .player-image {
     height: 110%;
     width: auto;
+    z-index: 1;
+}
+
+.expanded-image {
+    height: 35vh;
+    transition: height 0.4s ease-in-out;
+}
+
+.expanded-image img {
+    margin-right: 15em;
+    transition: margin-right 0.4s ease-in-out;
 }

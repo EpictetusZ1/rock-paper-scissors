@@ -50,8 +50,7 @@ function gameResult(computerSelection, playerSelection) {
 
 let scoreTracker = 0
 
-function roundCounter(scoreTracker) {
-    let compWin = "The COMPUTER won the game! Woo"
+function roundCounter(scoreTracker) {let compWin = "The COMPUTER won the game! Woo"
     let humanWin = "You  WON the game! Woo"
     for (let i = 1; i <= 5; i++) {
         console.log(`It is currently round number: ${i}`)
@@ -74,10 +73,20 @@ function roundCounter(scoreTracker) {
 
 // roundCounter(scoreTracker)
 
+// Handle Expansion of Player Divs and Display Benefit
+function increaseSize (element) {
+    element.classList.add("expanded-image")
+    if (element === document.getElementById("box-1")) {
+        document.getElementById("box-2").classList.remove("expanded-image")
+        document.getElementById("box-3").classList.remove("expanded-image")
+    } else if (element === document.getElementById("box-2")) {
+        document.getElementById("box-1").classList.remove("expanded-image")
+        document.getElementById("box-3").classList.remove("expanded-image")
 
-
-
-
-
+    } else if (element === document.getElementById("box-3")) {
+        document.getElementById("box-1").classList.remove("expanded-image")
+        document.getElementById("box-2").classList.remove("expanded-image")
+    }
+}
 
 
