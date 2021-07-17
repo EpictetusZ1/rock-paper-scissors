@@ -1,11 +1,11 @@
 @media (min-width: 500px) {
-    .mobile-intro-container {
+    .mobile-character-container {
         /* Only Displays this Div when Screen is SMALLER than 500px wide*/
         visibility: hidden;
     }
 }
 
-.mobile-intro-container {
+.mobile-character-container {
     background: #466793;
     width: 100%;
     height: 100vh;
@@ -14,9 +14,34 @@
     flex-wrap: nowrap;
 }
 
+@font-face {
+    font-family: "naruto";
+    src: url("../assets/fonts/njnaruto.ttf");
+}
+
+h2 {
+    font-family: naruto, sans-serif;
+    color: #000;
+    font-size: 1.7em;
+    letter-spacing: 2px;
+    word-spacing: 10px;
+}
+
+
+.mobile-character-title {
+    width: 100%;
+    padding: 10px 0 0 7px;
+    /*margin: 0 0 40px 0;*/
+    position: fixed;
+}
+
+.character-container {
+    margin-top: 9vh;
+}
+
 .diagonal-box {
     transform: skewY(-11deg);
-    height: 30vh;
+    height: 25vh;
 }
 
 .box-container {
@@ -54,10 +79,18 @@
 
 .expanded-image {
     height: 35vh;
-    transition: height 0.4s ease-in-out;
+    transition: height 0.4s ease-in;
 }
 
 .expanded-image img {
     margin-right: 15em;
-    transition: margin-right 0.4s ease-in-out;
+    transition: margin-right 0.4s ease-in;
 }
+
+
+
+
+
+
+
+
