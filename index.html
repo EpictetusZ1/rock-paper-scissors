@@ -14,27 +14,37 @@
 <div class="mobile-character-container">
     <div class="mobile-character-title">
         <h2 class="select-character-text">Choose Your Player !</h2>
-
     </div>
     <div class="character-container">
-    <div class="diagonal-box" id="box-1" onclick="increaseSize(this)">
+
+    <div class="diagonal-box" id="box-1" onclick="increaseSize(this);displayPlayerInfo(this)">
         <div class="box-container">
-            <div class="box-content">
+            <div class="box-content"  id="armin">
                 <img src="assets/playerPhotos/armin.png" alt="Armin" class="player-image">
+                <div id="armin-info">
+                    <h3>Armin</h3>
+                </div>
             </div>
         </div>
     </div>
-    <div class="diagonal-box" id="box-2" onclick="increaseSize(this)">
-        <div class="box-container">
+
+    <div class="diagonal-box" id="box-2" onclick="increaseSize(this);displayPlayerInfo(this)">
+        <div class="box-container" id="mikasa">
             <div class="box-content">
                 <img src="assets/playerPhotos/mikasa.png" alt="Mikasa" class="player-image">
+                <div id="mikasa-info">
+                    <h3>Mikasa</h3>
+                </div>
             </div>
         </div>
     </div>
-    <div class="diagonal-box" id="box-3" onclick="increaseSize(this)">
+    <div class="diagonal-box" id="box-3" onclick="increaseSize(this);displayPlayerInfo(this)">
         <div class="box-container">
-            <div class="box-content">
+            <div class="box-content" id="erin">
                 <img src="assets/playerPhotos/erin.png" alt="Erin Jaeger" class="player-image">
+                <div id="erin-info">
+                    <h3>Erin</h3>
+                </div>
             </div>
         </div>
     </div>

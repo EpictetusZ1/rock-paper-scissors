@@ -70,7 +70,6 @@ function roundCounter(scoreTracker) {let compWin = "The COMPUTER won the game! W
        }
     }
 }
-
 // roundCounter(scoreTracker)
 
 // Handle Expansion of Player Divs and Display Benefit
@@ -82,11 +81,57 @@ function increaseSize (element) {
     } else if (element === document.getElementById("box-2")) {
         document.getElementById("box-1").classList.remove("expanded-image")
         document.getElementById("box-3").classList.remove("expanded-image")
-
     } else if (element === document.getElementById("box-3")) {
         document.getElementById("box-1").classList.remove("expanded-image")
         document.getElementById("box-2").classList.remove("expanded-image")
     }
 }
 
+
+function displayPlayerInfo(element) {
+    let player
+    const box1 = document.getElementById("box-1")
+    const box2 = document.getElementById("box-2")
+    const box3 = document.getElementById("box-3")
+    if (element === document.getElementById("box-1")) {
+        box2.classList.remove("active-player")
+        box3.classList.remove("active-player")
+        player = document.getElementById("armin-info")
+        player.classList.add("active-player")
+        arminInfo()
+    } else if (element === document.getElementById("box-2")) {
+        box1.classList.remove("active-player")
+        box3.classList.remove("active-player")
+        player = document.getElementById("mikasa-info")
+        player.classList.add("active-player")
+        mikasaInfo()
+    } else if (element === document.getElementById("box-3")) {
+        box1.classList.remove("active-player")
+        box2.classList.remove("active-player")
+        player = document.getElementById("erin-info")
+        player.classList.add("active-player")
+        erinInfo()
+    }
+}
+
+function arminInfo() {
+    const arminContent = document.getElementById("armin-info")
+    arminContent.style.display = "block"
+    document.getElementById("mikasa-info").style.display = "none"
+    document.getElementById("erin-info").style.display = "none"
+}
+
+function mikasaInfo() {
+    const mikasaContent = document.getElementById("mikasa-info")
+    mikasaContent.style.display = "block"
+    document.getElementById("armin-info").style.display = "none"
+    document.getElementById("erin-info").style.display = "none"
+}
+
+function erinInfo() {
+    const erinContent = document.getElementById("erin-info")
+    erinContent.style.display = "block"
+    document.getElementById("armin-info").style.display = "none"
+    document.getElementById("mikasa-info").style.display = "none"
+}
 
