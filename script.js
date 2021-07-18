@@ -72,7 +72,7 @@ function roundCounter(scoreTracker) {let compWin = "The COMPUTER won the game! W
 }
 // roundCounter(scoreTracker)
 
-// Handle Expansion of Player Divs and Display Benefit
+// Handle Expansion of Character Divs, Display Name
 function increaseSize (element) {
     element.classList.add("expanded-image")
     if (element === document.getElementById("box-1")) {
@@ -87,7 +87,7 @@ function increaseSize (element) {
     }
 }
 
-
+// Handle Adding player info on click, removing from others
 function displayPlayerInfo(element) {
     let player
     const box1 = document.getElementById("box-1")

@@ -3,7 +3,6 @@
     src: url("../assets/fonts/njnaruto.ttf");
 }
 
-
 @font-face {
     font-family: "attack";
     src: url("../assets/fonts/CloisterBlack.ttf");
@@ -12,7 +11,7 @@
 
 @media (min-width: 500px) {
     .mobile-character-container {
-        /* Only Displays this Div when Screen is SMALLER than 500px wide*/
+        /* Only displays this Div when Screen is SMALLER than 500px wide*/
         visibility: hidden;
     }
 }
@@ -24,6 +23,8 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 h2 {
@@ -34,21 +35,21 @@ h2 {
     word-spacing: 10px;
 }
 
-
 .mobile-character-title {
     width: 100%;
-    padding: 10px 0 0 7px;
-    /*margin: 0 0 40px 0;*/
+    margin: 15px 0 0 10px;
+    /*padding: 10px 0 0 7px;*/
     position: fixed;
 }
 
 .character-container {
     margin-top: 9vh;
+    height: inherit;
 }
 
 .diagonal-box {
     transform: skewY(-11deg);
-    height: 25vh;
+    height: 30%;
 }
 
 .box-container {
@@ -76,7 +77,6 @@ h2 {
 
 #box-3 {
     background: #42694a;
-
 }
 
 .player-image {
@@ -90,20 +90,21 @@ h2 {
 }
 
 .expanded-image img {
-    margin-right: 20em;
+    margin-right: 24em;
     transition: margin-right 0.4s ease-in;
 }
 
 
 .active-player {
-    margin-left: -18em;
+    margin-left: -23em;
     width: 30%;
     height: 5em;
+    text-align: center;
 }
 
 h3 {
     font-family: attack, sans-serif;
-    font-size: 2em;
+    font-size: 2.3em;
 }
 
 #armin-info {
@@ -118,8 +119,18 @@ h3 {
     display: none;
 }
 
-
-
+.fight {
+    padding-top: 4px;
+    margin: 10px 5px;
+    width: 5em;
+    height: 1.5em;
+    font-family: naruto, sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    background-color: #525151;
+    border: 1px solid black;
+    border-radius: 5px;
+}
 
 
 
