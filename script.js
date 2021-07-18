@@ -135,3 +135,24 @@ function erinInfo() {
     document.getElementById("mikasa-info").style.display = "none"
 }
 
+const arminFightBtn = document.getElementById("armin-fight")
+const mikasaFightBtn = document.getElementById("mikasa-fight")
+const erinFightBtn = document.getElementById("erin-fight")
+
+arminFightBtn.addEventListener("click", changeColorBtn)
+mikasaFightBtn.addEventListener("click", changeColorBtn)
+erinFightBtn.addEventListener("click", changeColorBtn)
+
+function changeColorBtn() {
+    this.style.backgroundColor = "#91141F"
+}
+
+
+
+
+
+
+
+
+
+
