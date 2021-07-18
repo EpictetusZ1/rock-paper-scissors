@@ -139,13 +139,26 @@ const arminFightBtn = document.getElementById("armin-fight")
 const mikasaFightBtn = document.getElementById("mikasa-fight")
 const erinFightBtn = document.getElementById("erin-fight")
 
-arminFightBtn.addEventListener("click", changeColorBtn)
-mikasaFightBtn.addEventListener("click", changeColorBtn)
-erinFightBtn.addEventListener("click", changeColorBtn)
+arminFightBtn.addEventListener("click", confirmPlayerChoice)
+mikasaFightBtn.addEventListener("click", confirmPlayerChoice)
+erinFightBtn.addEventListener("click", confirmPlayerChoice)
 
-function changeColorBtn() {
+const selection = []
+
+function confirmPlayerChoice() {
     this.style.backgroundColor = "#91141F"
+    if (this.getAttribute("id") === "armin-fight") {
+        selection.push(1)
+        console.log(selection[0])
+    } else if (this.getAttribute("id") === "mikasa-fight") {
+        selection.push(2)
+        console.log(selection[0])
+    } else if ( this.getAttribute("id") === "erin-fight") {
+        selection.push(3)
+        console.log(selection[0])
+    }
 }
+
 
 
 
