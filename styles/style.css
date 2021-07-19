@@ -1,4 +1,5 @@
-@import url(resets.css);
+@import "resets.css";
+@import "play-screen.css";
 
 @import url("https://fonts.googleapis.com/css2?family=Volkhov&family=Vollkorn:wght@500&display=swap");
 
@@ -93,8 +94,8 @@ h4 {
     padding: 8px;
     font-size: 1.2em;
     line-height: 1.6em;
-    animation: fadeTextIn 3s ease-in forwards;
-    animation-delay: 9s;
+    animation: fadeTextIn 2s ease-in forwards;
+    animation-delay: 8s;
 }
 
 
@@ -212,6 +213,14 @@ h3 {
     background-color: #525151;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+.play-screen {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background: #525151;
 }
 
 

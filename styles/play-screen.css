@@ -1,0 +1,76 @@
+.titan-container {
+    height: 25vh;
+    width: 100%;
+}
+
+p {
+    font-family: Volkhov, sans-serif;
+}
+
+.titan {
+    float: right;
+    height: auto;
+    width: 50%;
+}
+
+.wall {
+    float: right;
+    margin-top: -25px;
+    height: auto;
+    width: 55%;
+}
+
+.player-container {
+    height: 25vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.player-image-fight {
+    width: 40vw;
+    height: auto;
+}
+
+.selection-container {
+    margin-top: 5px;
+    width: 100%;
+    height: 50vh;
+    background: black;
+}
+
+.score-tracker {
+    line-height: 1.2em;
+    height: auto;
+    width: 100%;
+    font-size: 1em;
+    text-align: center;
+    color: white;
+}
+
+.weapon-select {
+    padding-top: 15px;
+    width: 100%;
+    height: auto;
+    font-family: naruto, sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #FEFEFE;
+}
+
+.weapon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.selection-box {
+    margin: 5px 10px;
+    width: 25vw;
+    height: 25vw;
+    background-color: #FEFEFE;
+    border-radius: 15px;
+    opacity: 0.8;
+}
+

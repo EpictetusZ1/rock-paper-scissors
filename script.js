@@ -143,6 +143,7 @@ arminFightBtn.addEventListener("click", confirmPlayerChoice)
 mikasaFightBtn.addEventListener("click", confirmPlayerChoice)
 erinFightBtn.addEventListener("click", confirmPlayerChoice)
 
+
 const selection = []
 
 function confirmPlayerChoice() {
@@ -157,16 +158,49 @@ function confirmPlayerChoice() {
         selection.push(3)
         console.log(selection[0])
     }
+    getPlayer()
 }
-
 
 const splash = document.querySelector(".intro-splash-mobile")
 
 document.addEventListener("DOMContentLoaded", (evt) => {
     setTimeout(() => {
         splash.classList.add("display-none")
-    }, 17000)
+
+    }, 10)
 })
+
+
+let fightBtn = document.querySelectorAll(".fight")
+
+fightBtn.forEach(function (e) {
+    e.addEventListener("click", showPlayScreen)
+})
+
+
+function showPlayScreen() {
+    let element = document.querySelector(".play-screen")
+    setTimeout(()=> {
+        element.classList.remove("display-none")
+    }, 250)
+}
+
+function getPlayer() {
+    let playerImg = document.createElement("img")
+    const playerContainer = document.querySelector(".player-container")
+    if (selection[0] === 1) {
+        playerImg.src = "assets/playerPhotos/armin.png"
+    } else if (selection[0] === 2) {
+        playerImg.src = "assets/playerPhotos/mikasa.png"
+    } else if (selection[0] === 3) {
+        playerImg.src = "assets/playerPhotos/erin.png"
+    }
+    playerImg.classList.add("player-image-fight")
+    playerContainer.appendChild(playerImg)
+}
+
+
+
 
 
 
