@@ -1,3 +1,7 @@
+@import url(resets.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Volkhov&family=Vollkorn:wght@500&display=swap");
+
 @font-face {
     font-family: "naruto";
     src: url("../assets/fonts/njnaruto.ttf");
@@ -8,13 +12,91 @@
     src: url("../assets/fonts/CloisterBlack.ttf");
 }
 
-
 @media (min-width: 500px) {
     .mobile-character-container {
-        /* Only displays this Div when Screen is SMALLER than 500px wide*/
         visibility: hidden;
     }
 }
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.intro-splash-mobile {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: black;
+    font-family: Volkhov, sans-serif;
+    color: #FEFEFE;
+    z-index: 5;
+    text-align: center;
+}
+
+.display-none {
+    visibility: hidden;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 22vh;
+}
+
+@keyframes fadeTextIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeTextIn {
+    opacity: 0;
+    animation: fadeTextIn 1.2s ease-in forwards;
+}
+
+h4 {
+    opacity: 0;
+    width: 100%;
+    line-height: 1.8em;
+    font-family: attack, sans-serif;
+    font-size: 2em;
+    animation: fadeTextIn 3s ease-in forwards;
+    animation-delay: 1s;
+}
+
+.inspired-text {
+    opacity: 0;
+    animation: fadeTextIn 1.5s ease-in forwards;
+    animation-delay: 1s;
+}
+
+.cta-title {
+    opacity: 0;
+    font-size: 1.8em;
+    line-height: 1.7em;
+    animation: fadeTextIn 1.5s ease-in forwards;
+    animation-delay: 4s;
+    color: #91141F;
+}
+
+.cta {
+    opacity: 0;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    line-height: 1.7em;
+    animation: fadeTextIn 2s ease-in forwards;
+    animation-delay: 6s;
+}
+
+.cta-body {
+    opacity: 0;
+    padding: 8px;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    animation: fadeTextIn 3s ease-in forwards;
+    animation-delay: 9s;
+}
+
 
 .mobile-character-container {
     background: #466793;
@@ -25,6 +107,7 @@
     flex-wrap: nowrap;
     overflow-x: hidden;
     overflow-y: hidden;
+    z-index: 2;
 }
 
 h2 {
@@ -130,8 +213,6 @@ h3 {
     border: 1px solid black;
     border-radius: 5px;
 }
-
-
 
 
 

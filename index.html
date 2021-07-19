@@ -6,17 +6,24 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rock-Paper-Scissors</title>
-    <link rel="stylesheet" href="styles/resets.css">
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
+
 <div class="mobile-character-container">
+    <div class="intro-splash-mobile">
+        <h1 class="game-title fadeTextIn">Rock - Paper - Scissors</h1>
+        <p class="inspired-text">Inspired By: </p>
+        <h4>Attack On Titan</h4>
+        <p class="cta-title">HELP !<br></p>
+        <p class="cta">Shiganshina District is Under Attack !</p>
+        <p class="cta-body">The only way to save humanity is by playing a game of Rock Paper Scissors against a Titan<br><br>FORWARD !</p>
+    </div>
     <div class="mobile-character-title">
         <h2 class="select-character-text">Choose Your Player !</h2>
     </div>
     <div class="character-container">
-
     <div class="diagonal-box" id="box-1" onclick="increaseSize(this);displayPlayerInfo(this)">
         <div class="box-container">
             <div class="box-content"  id="armin">
@@ -52,6 +59,7 @@
         </div>
     </div>
     </div>
+
 </div>
 </body>
 </html>
