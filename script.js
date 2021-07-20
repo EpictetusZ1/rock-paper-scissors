@@ -145,20 +145,27 @@ erinFightBtn.addEventListener("click", confirmPlayerChoice)
 
 
 const selection = []
+let clicked = false
 
 function confirmPlayerChoice() {
     this.style.backgroundColor = "#91141F"
+    if (clicked !== true) {
     if (this.getAttribute("id") === "armin-fight") {
         selection.push(1)
         console.log(selection[0])
+        clicked = true
+        getPlayer()
     } else if (this.getAttribute("id") === "mikasa-fight") {
         selection.push(2)
         console.log(selection[0])
+        clicked = true
+        getPlayer()
     } else if ( this.getAttribute("id") === "erin-fight") {
         selection.push(3)
         console.log(selection[0])
-    }
-    getPlayer()
+        clicked = true
+        getPlayer()
+    }}
 }
 
 const splash = document.querySelector(".intro-splash-mobile")
@@ -166,7 +173,6 @@ const splash = document.querySelector(".intro-splash-mobile")
 document.addEventListener("DOMContentLoaded", (evt) => {
     setTimeout(() => {
         splash.classList.add("display-none")
-
     }, 10)
 })
 
