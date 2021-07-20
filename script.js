@@ -1,4 +1,4 @@
-const choices = ["rock", "paper", "scissors"]
+const choiceArray = ["rock", "paper", "scissors"]
 
 function computerPlay(choices) {
     let computerSelection
@@ -13,21 +13,6 @@ function computerPlay(choices) {
     return computerSelection
 }
 
-function playerSelection(choices) {
-    let selection
-    let goodAnswer = true
-    selection = window.prompt("Type your choice here").toLowerCase()
-    if (choices.indexOf(selection) === -1) { // Determines if NON-VALID entry
-        goodAnswer = false
-        while (goodAnswer !== true) {
-            selection = window.prompt("Not a valid entry, please choose one of the following: rock, paper, scissors").toLowerCase()
-            if (choices.indexOf(selection) !== -1) {
-                goodAnswer = true
-            }
-        }
-    }
-    return selection
-}
 
 function gameResult(computerSelection, playerSelection) {
     if (computerSelection === playerSelection) {
@@ -50,26 +35,26 @@ function gameResult(computerSelection, playerSelection) {
 
 let scoreTracker = 0
 
-function roundCounter(scoreTracker) {let compWin = "The COMPUTER won the game! Woo"
-    let humanWin = "You  WON the game! Woo"
-    for (let i = 1; i <= 5; i++) {
-        console.log(`It is currently round number: ${i}`)
-        scoreTracker = gameResult(computerPlay(choices), playerSelection(choices))
-       if (scoreTracker === 3 ) {
-           console.log(humanWin)
-       } else if (scoreTracker === -3) {
-           console.log(compWin)
-       } else if (i === 5) {
-           if (scoreTracker >= 1) {
-               console.log(humanWin)
-           } else if (scoreTracker <= -1 ) {
-               console.log(compWin)
-           } else {
-               console.log("The game is a DRAW!")
-           }
-       }
-    }
-}
+// function roundCounter(scoreTracker) {let compWin = "The COMPUTER won the game! Woo"
+//     let humanWin = "You  WON the game! Woo"
+//     for (let i = 1; i <= 5; i++) {
+//         console.log(`It is currently round number: ${i}`)
+//         scoreTracker = gameResult(computerPlay(choices), playerSelection(choices))
+//        if (scoreTracker === 3 ) {
+//            console.log(humanWin)
+//        } else if (scoreTracker === -3) {
+//            console.log(compWin)
+//        } else if (i === 5) {
+//            if (scoreTracker >= 1) {
+//                console.log(humanWin)
+//            } else if (scoreTracker <= -1 ) {
+//                console.log(compWin)
+//            } else {
+//                console.log("The game is a DRAW!")
+//            }
+//        }
+//     }
+// }
 // roundCounter(scoreTracker)
 
 // Handle Expansion of Character Divs, Display Name
@@ -152,17 +137,14 @@ function confirmPlayerChoice() {
     if (clicked !== true) {
     if (this.getAttribute("id") === "armin-fight") {
         selection.push(1)
-        console.log(selection[0])
         clicked = true
         getPlayer()
     } else if (this.getAttribute("id") === "mikasa-fight") {
         selection.push(2)
-        console.log(selection[0])
         clicked = true
         getPlayer()
     } else if ( this.getAttribute("id") === "erin-fight") {
         selection.push(3)
-        console.log(selection[0])
         clicked = true
         getPlayer()
     }}
@@ -175,7 +157,6 @@ document.addEventListener("DOMContentLoaded", (evt) => {
         splash.classList.add("display-none")
     }, 10)
 })
-
 
 let fightBtn = document.querySelectorAll(".fight")
 
@@ -205,8 +186,22 @@ function getPlayer() {
     playerContainer.appendChild(playerImg)
 }
 
+const choices = document.querySelectorAll('.selection-box')
 
+choices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+        updateStyleChoice(choice)
+        let playerSelection = choice.id
+        gameResult(computerPlay(choiceArray), playerSelection)
+    })
+})
 
+function updateStyleChoice(choice) {
+    choice.classList.add("selection-highlight")
+    setTimeout(function () {
+        choice.classList.remove("selection-highlight")
+    },300)
+}
 
 
 

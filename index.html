@@ -20,19 +20,31 @@
         <div class="player-container"></div>
 
         <div class="selection-container">
-            <div class="score-tracker">
-                <p>Score <br> You: 0 &nbsp; Colossal Titan: 0</p>
-            </div>
             <p class="weapon-select">Choose Your Weapon :</p>
             <div class="weapon-container">
-                <div class="selection-box rock">
-                    <img src="assets/rps-icons-recolored/rps-icons-rock.svg" alt="Rock" class="rock">
+                <div class="selection-box" id="rock">
+                    <img src="assets/rps-icons-recolored/rps-icons-rock.svg" alt="Rock">
                 </div>
-                <div class="selection-box paper">
-                    <img src="assets/rps-icons-recolored/rps-icons-paper.svg" alt="Paper" class="paper">
+                <div class="selection-box" id="paper">
+                    <img src="assets/rps-icons-recolored/rps-icons-paper.svg" alt="Paper">
                 </div>
-                <div class="selection-box scissors">
-                    <img src="assets/rps-icons-recolored/rps-icons-scissors.svg" alt="Scissors" class="scissors">
+                <div class="selection-box" id="scissors">
+                    <img src="assets/rps-icons-recolored/rps-icons-scissors.svg" alt="Scissors">
+                </div>
+            </div>
+            <div class="score-tracker">
+                <div class="score-title">
+                    <p>Score:</p>
+                </div>
+                <div class="ind-score-container">
+                    <div class="score">
+                        <p>You:</p>
+                        <p class="score-value">0</p>
+                    </div>
+                    <div class="score">
+                        <p>Titan:</p>
+                        <p class="score-value">0</p>
+                    </div>
                 </div>
             </div>
         </div>
