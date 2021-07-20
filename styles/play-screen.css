@@ -63,14 +63,16 @@ p {
     display: flex;
     justify-content: center;
     text-align: center;
+    margin-top: 7px;
 }
 
 .selection-box {
     margin: 5px 10px;
     width: 25vw;
     height: 25vw;
-    background-color: #FEFEFE;
+    border: 3px solid #351c1c;
     border-radius: 15px;
     opacity: 0.8;
+    overflow: hidden;
 }
 
