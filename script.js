@@ -96,7 +96,7 @@ const splash = document.querySelector(".intro-splash-mobile")
 document.addEventListener("DOMContentLoaded", (evt) => {
     setTimeout(() => {
         splash.classList.add("display-none")
-    }, 10)
+    }, 17000)
 })
 
 let fightBtn = document.querySelectorAll(".fight")
@@ -165,50 +165,53 @@ let titanSValue = 0
 let playerScore = document.getElementById("player-score")
 let titanScore = document.getElementById("titan-score")
 
+const messageBox = document.querySelector(".score-message-container")
+
 function roundResult(computerSelection, playerSelection) {
     if (computerSelection === playerSelection) {
-        console.log(`It's a Draw! You and The Computer Both Picked ${computerSelection}.`)
+        messageBox.textContent = `This Round is a Draw! You and The Titan Both Picked ${computerSelection}.`
     } else if (playerSelection === "rock" && computerSelection !== "paper") {
         playerSValue++
         scoreTracker++
-        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
+        messageBox.textContent = `Congrats! You Won This round! The Titan picked: ${computerSelection}.`
     } else if (playerSelection === "paper" && computerSelection !== "scissors") {
         playerSValue++
         scoreTracker++
-        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
+        messageBox.textContent = `Congrats! You Won This round! The Titan picked: ${computerSelection}.`
     } else if (playerSelection === "scissors" && computerSelection !== "rock") {
         playerSValue++
         scoreTracker++
-        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
+        messageBox.textContent = `Congrats! You Won This round! The Titan picked: ${computerSelection}.`
     }  else {
         titanSValue++
         scoreTracker--
-        console.log(`You Lost This Round! The Computer picked: ${computerSelection}.`)
+        messageBox.textContent = `You Lost This Round! The Titan picked: ${computerSelection}.`
     }
 }
 
 let winner = false
+let roundUpdate = document.querySelector(".round-count-container")
 
 function roundCounter(roundNum) {
-    let compWin = "The COMPUTER won the game! Woo" // rewrite to DOM method
-    let humanWin = "You  WON the game! Woo" // rewrite to DOM
-    console.log(`It is currently round number: ${roundNum}`)
+    let compWin = "The Titan Won the Game! Shiganshina District is Going to Fall !"
+    let humanWin = "You  WON the game! Woo"
+    roundUpdate.textContent = `It is currently round number: ${roundNum}`
     roundResult(computerPlay(choiceArray), playerSelection)
     if (scoreTracker === 6) {
-        console.log(humanWin)
+        messageBox.textContent = humanWin
         winner = true
     } else if (scoreTracker === -6) {
-        console.log(compWin)
+        messageBox.textContent = compWin
         winner = true
     } else if (roundNum >= 9 ) {
             if (scoreTracker >= 1) {
-                console.log(humanWin)
+                messageBox.textContent = humanWin
                 winner = true
             } else if (scoreTracker <= -1) {
-                console.log(compWin)
+                messageBox.textContent = compWin
                 winner = true
             } else {
-                console.log("The game is a DRAW!")
+                messageBox.textContent = "The Game is a DRAW, Better Luck Next Time"
             }
         }
 }
