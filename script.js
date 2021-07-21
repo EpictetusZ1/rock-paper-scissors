@@ -1,62 +1,3 @@
-const choiceArray = ["rock", "paper", "scissors"]
-
-function computerPlay(choices) {
-    let computerSelection
-    let randomNum = Math.floor(Math.random() * 100)
-    if (randomNum < 33) {
-        computerSelection = choices[0]
-    } else if (randomNum > 33 && randomNum < 66) {
-        computerSelection = choices[1]
-    } else {
-        computerSelection = choices[2]
-    }
-    return computerSelection
-}
-
-
-function gameResult(computerSelection, playerSelection) {
-    if (computerSelection === playerSelection) {
-        console.log(`It's a Draw! You and The Computer Both Picked ${computerSelection}.`)
-    } else if (playerSelection === "rock" && computerSelection !== "paper") {
-        scoreTracker++
-        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
-    } else if (playerSelection === "paper" && computerSelection !== "scissors") {
-        scoreTracker++
-        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
-    } else if (playerSelection === "scissors" && computerSelection !== "rock") {
-        scoreTracker++
-        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
-    }  else {
-        scoreTracker--
-        console.log(`You Lost This Round! The Computer picked: ${computerSelection}.`)
-    }
-    return scoreTracker
-}
-
-let scoreTracker = 0
-
-// function roundCounter(scoreTracker) {let compWin = "The COMPUTER won the game! Woo"
-//     let humanWin = "You  WON the game! Woo"
-//     for (let i = 1; i <= 5; i++) {
-//         console.log(`It is currently round number: ${i}`)
-//         scoreTracker = gameResult(computerPlay(choices), playerSelection(choices))
-//        if (scoreTracker === 3 ) {
-//            console.log(humanWin)
-//        } else if (scoreTracker === -3) {
-//            console.log(compWin)
-//        } else if (i === 5) {
-//            if (scoreTracker >= 1) {
-//                console.log(humanWin)
-//            } else if (scoreTracker <= -1 ) {
-//                console.log(compWin)
-//            } else {
-//                console.log("The game is a DRAW!")
-//            }
-//        }
-//     }
-// }
-// roundCounter(scoreTracker)
-
 // Handle Expansion of Character Divs, Display Name
 function increaseSize (element) {
     element.classList.add("expanded-image")
@@ -186,15 +127,91 @@ function getPlayer() {
     playerContainer.appendChild(playerImg)
 }
 
+function computerPlay(choices) {
+    let computerSelection
+    let randomNum = Math.floor(Math.random() * 100)
+    if (randomNum < 33) {
+        computerSelection = choices[0]
+    } else if (randomNum > 33 && randomNum < 66) {
+        computerSelection = choices[1]
+    } else {
+        computerSelection = choices[2]
+    }
+    return computerSelection
+}
+
 const choices = document.querySelectorAll('.selection-box')
+let playerSelection
+const choiceArray = ["rock", "paper", "scissors"]
+let scoreTracker = 0
+let roundNum = 1
 
 choices.forEach((choice) => {
     choice.addEventListener("click", () => {
+        playerSelection = choice.id // This is where the Players choice is being defined by the divs ID
         updateStyleChoice(choice)
-        let playerSelection = choice.id
-        gameResult(computerPlay(choiceArray), playerSelection)
+        if (winner === false && roundNum <= 10) {
+            roundCounter(roundNum)
+            playerScore.textContent = playerSValue.toString()
+            titanScore.textContent = titanSValue.toString()
+            roundNum++
+            }
     })
 })
+
+let playerSValue = 0
+let titanSValue = 0
+
+let playerScore = document.getElementById("player-score")
+let titanScore = document.getElementById("titan-score")
+
+function roundResult(computerSelection, playerSelection) {
+    if (computerSelection === playerSelection) {
+        console.log(`It's a Draw! You and The Computer Both Picked ${computerSelection}.`)
+    } else if (playerSelection === "rock" && computerSelection !== "paper") {
+        playerSValue++
+        scoreTracker++
+        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
+    } else if (playerSelection === "paper" && computerSelection !== "scissors") {
+        playerSValue++
+        scoreTracker++
+        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
+    } else if (playerSelection === "scissors" && computerSelection !== "rock") {
+        playerSValue++
+        scoreTracker++
+        console.log(`Congrats!, You Won This round! The Computer picked: ${computerSelection}.`)
+    }  else {
+        titanSValue++
+        scoreTracker--
+        console.log(`You Lost This Round! The Computer picked: ${computerSelection}.`)
+    }
+}
+
+let winner = false
+
+function roundCounter(roundNum) {
+    let compWin = "The COMPUTER won the game! Woo" // rewrite to DOM method
+    let humanWin = "You  WON the game! Woo" // rewrite to DOM
+    console.log(`It is currently round number: ${roundNum}`)
+    roundResult(computerPlay(choiceArray), playerSelection)
+    if (scoreTracker === 6) {
+        console.log(humanWin)
+        winner = true
+    } else if (scoreTracker === -6) {
+        console.log(compWin)
+        winner = true
+    } else if (roundNum >= 9 ) {
+            if (scoreTracker >= 1) {
+                console.log(humanWin)
+                winner = true
+            } else if (scoreTracker <= -1) {
+                console.log(compWin)
+                winner = true
+            } else {
+                console.log("The game is a DRAW!")
+            }
+        }
+}
 
 function updateStyleChoice(choice) {
     choice.classList.add("selection-highlight")
@@ -202,12 +219,6 @@ function updateStyleChoice(choice) {
         choice.classList.remove("selection-highlight")
     },300)
 }
-
-
-
-
-
-
 
 
 
