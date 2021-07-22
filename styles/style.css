@@ -38,7 +38,7 @@ html, body {
 .display-none {
     visibility: hidden;
 }
-
+g
 h1 {
     font-size: 2em;
     line-height: 22vh;
@@ -224,7 +224,7 @@ h3 {
 }
 
 .play-screen {
-    height: 100%;
+    height: calc(100vh - calc(100vh - 100%));
     width: 100%;
     position: fixed;
     z-index: 10;

@@ -1,5 +1,5 @@
 .titan-container {
-    height: 24vh;
+    height: 20vh;
     width: 100%;
 }
 
@@ -37,7 +37,7 @@ p {
 }
 
 .player-container {
-    height: 24vh;
+    height: 25vh;
     width: 100%;
     overflow: hidden;
 }
@@ -49,14 +49,14 @@ p {
 
 .selection-container {
     width: 100%;
-    height: 100%;
+    height: 70%;
     background: black;
     border-top: 5px solid #91141F;
 }
 
 .score-tracker {
     line-height: 1.2em;
-    height: 80%;
+    height: 70%;
     width: 100%;
     font-size: 1em;
     text-align: center;
@@ -115,12 +115,12 @@ p {
 .score {
     line-height: normal;
     width: 50%;
-    font-size: 1em;
+    font-size: 0.9em;
     color: #91141F;
 }
 
 .score-value {
-    font-size: 1.7em;
+    font-size: 1.4em;
     color: #91141F;
 }
 
