@@ -96,7 +96,7 @@ const splash = document.querySelector(".intro-splash-mobile")
 document.addEventListener("DOMContentLoaded", (evt) => {
     setTimeout(() => {
         splash.classList.add("display-none")
-    }, 10)
+    }, 17000)
 })
 
 let fightBtn = document.querySelectorAll(".fight")
@@ -203,11 +203,12 @@ let roundUpdate = document.querySelector(".round-count-container")
 
 function roundCounter(roundNum) {
     let compWin = "NO! The Titan Won! Shiganshina District is Going to Fall"
-    let humanWin = "You  WON! The Titan has been Defeated!"
+    let humanWin = "You  WON! The Titan Has Fallen!"
     roundUpdate.textContent = `Round: ${roundNum} /10`
     roundResult(computerPlay(choiceArray), playerSelection)
     if (scoreTracker === 6) {
         messageBox.textContent = humanWin
+        titanImage.classList.add("hide-titan")
         winner = true
     } else if (scoreTracker === -6) {
         messageBox.textContent = compWin
@@ -215,6 +216,7 @@ function roundCounter(roundNum) {
     } else if (roundNum >= 10 ) {
             if (scoreTracker >= 1) {
                 messageBox.textContent = humanWin
+                titanImage.classList.add("hide-titan")
                 winner = true
             } else if (scoreTracker <= -1) {
                 messageBox.textContent = compWin

@@ -16,6 +16,19 @@ p {
     top: 0;
 }
 
+@keyframes hide-titan {
+    to {
+        opacity: 0;
+        top: 85px
+    }
+
+}
+
+.hide-titan {
+    opacity: 1;
+    animation: hide-titan 3s ease-in forwards;
+}
+
 .wall {
     float: right;
     margin-top: -25px;

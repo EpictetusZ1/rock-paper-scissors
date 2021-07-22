@@ -31,7 +31,7 @@ html, body {
     background: black;
     font-family: Volkhov, sans-serif;
     color: #FEFEFE;
-    z-index: 5;
+    z-index: 10;
     text-align: center;
 }
 
