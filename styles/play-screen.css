@@ -9,8 +9,11 @@ p {
 
 .titan {
     float: right;
+    position: relative;
+    z-index: -1;
     height: auto;
     width: 50%;
+    top: 0;
 }
 
 .wall {

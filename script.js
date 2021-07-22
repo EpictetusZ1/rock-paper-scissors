@@ -167,6 +167,9 @@ let titanScore = document.getElementById("titan-score")
 
 const messageBox = document.querySelector(".score-message-container")
 
+let titanImage = document.querySelector(".titan")
+let titanIncrement = 0
+
 function roundResult(computerSelection, playerSelection) {
     if (computerSelection === playerSelection) {
         messageBox.textContent = `This Round is a Draw! You and The Titan Both Picked: ${computerSelection}.`
@@ -174,14 +177,20 @@ function roundResult(computerSelection, playerSelection) {
         playerSValue++
         scoreTracker++
         messageBox.textContent = `Congrats! You Won This round! The Titan Picked: ${computerSelection}.`
+        titanIncrement += 5
+        titanImage.style.top = titanIncrement + "px"
     } else if (playerSelection === "paper" && computerSelection !== "scissors") {
         playerSValue++
         scoreTracker++
         messageBox.textContent = `Congrats! You Won This round! The Titan Picked: ${computerSelection}.`
+        titanIncrement += 5
+        titanImage.style.top = titanIncrement + "px"
     } else if (playerSelection === "scissors" && computerSelection !== "rock") {
         playerSValue++
         scoreTracker++
         messageBox.textContent = `Congrats! You Won This round! The Titan Picked: ${computerSelection}.`
+        titanIncrement += 5
+        titanImage.style.top = titanIncrement + "px"
     }  else {
         titanSValue++
         scoreTracker--
