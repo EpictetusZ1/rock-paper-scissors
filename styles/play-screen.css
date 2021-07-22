@@ -1,5 +1,5 @@
 .titan-container {
-    height: 25vh;
+    height: 24vh;
     width: 100%;
 }
 
@@ -21,7 +21,7 @@ p {
 }
 
 .player-container {
-    height: 25vh;
+    height: 24vh;
     width: 100%;
     overflow: hidden;
 }
@@ -33,14 +33,14 @@ p {
 
 .selection-container {
     width: 100%;
-    height: 50vh;
+    height: 100%;
     background: black;
     border-top: 5px solid #91141F;
 }
 
 .score-tracker {
     line-height: 1.2em;
-    height: 100%;
+    height: 80%;
     width: 100%;
     font-size: 1em;
     text-align: center;
@@ -55,7 +55,7 @@ p {
     width: 100%;
     height: auto;
     font-family: naruto, sans-serif;
-    font-size: 1.5em;
+    font-size: 1.4em;
     letter-spacing: 2px;
     word-spacing: 8px;
     text-align: center;
@@ -86,38 +86,38 @@ p {
 .ind-score-container {
     display: flex;
     width: 100%;
-    height: 20vw;
+    height: auto;
 }
 
 .score-title {
-    height: 1.5em;
+    height: auto;
     width: 100%;
-    font-size: 1.5em;
-}
-
-.score {
-    width: 50%;
     font-size: 1.2em;
 }
 
+.score {
+    line-height: normal;
+    width: 50%;
+    font-size: 1em;
+}
+
 .score-value {
-    font-size: 2em;
-    line-height: 2em;
+    font-size: 1.7em;
 }
 
 .round-count-container {
     width: 100%;
-    height: 1.5em;
+    height: auto;
+    font-size: 0.8em;
     font-family: Volkhov, sans-serif;
 }
 
 
 .score-message-container {
-    margin: 2px 5px;
+    margin: 2px 3px 5px 3px;
     width: 90%;
-    font-size: 1.2em;
+    font-size: 0.9em;
+    text-align: center;
     height: 5vh;
     font-family: Volkhorn, sans-serif;
-    word-spacing: 3px;
-    text-wrap: normal;
 }
