@@ -169,23 +169,23 @@ const messageBox = document.querySelector(".score-message-container")
 
 function roundResult(computerSelection, playerSelection) {
     if (computerSelection === playerSelection) {
-        messageBox.textContent = `This Round is a Draw! You and The Titan Both Picked ${computerSelection}.`
+        messageBox.textContent = `This Round is a Draw! You and The Titan Both Picked: ${computerSelection}.`
     } else if (playerSelection === "rock" && computerSelection !== "paper") {
         playerSValue++
         scoreTracker++
-        messageBox.textContent = `Congrats! You Won This round! The Titan picked: ${computerSelection}.`
+        messageBox.textContent = `Congrats! You Won This round! The Titan Picked: ${computerSelection}.`
     } else if (playerSelection === "paper" && computerSelection !== "scissors") {
         playerSValue++
         scoreTracker++
-        messageBox.textContent = `Congrats! You Won This round! The Titan picked: ${computerSelection}.`
+        messageBox.textContent = `Congrats! You Won This round! The Titan Picked: ${computerSelection}.`
     } else if (playerSelection === "scissors" && computerSelection !== "rock") {
         playerSValue++
         scoreTracker++
-        messageBox.textContent = `Congrats! You Won This round! The Titan picked: ${computerSelection}.`
+        messageBox.textContent = `Congrats! You Won This round! The Titan Picked: ${computerSelection}.`
     }  else {
         titanSValue++
         scoreTracker--
-        messageBox.textContent = `You Lost This Round! The Titan picked: ${computerSelection}.`
+        messageBox.textContent = `You Lost This Round! The Titan Picked: ${computerSelection}.`
     }
 }
 
@@ -193,9 +193,9 @@ let winner = false
 let roundUpdate = document.querySelector(".round-count-container")
 
 function roundCounter(roundNum) {
-    let compWin = "The Titan Won the Game! Shiganshina District is Going to Fall !"
-    let humanWin = "You  WON the game! Woo"
-    roundUpdate.textContent = `It is currently round number: ${roundNum}`
+    let compWin = "NO! The Titan Won! Shiganshina District is Going to Fall"
+    let humanWin = "You  WON! The Titan has been Defeated!"
+    roundUpdate.textContent = `Round: ${roundNum} /10`
     roundResult(computerPlay(choiceArray), playerSelection)
     if (scoreTracker === 6) {
         messageBox.textContent = humanWin
@@ -203,7 +203,7 @@ function roundCounter(roundNum) {
     } else if (scoreTracker === -6) {
         messageBox.textContent = compWin
         winner = true
-    } else if (roundNum >= 9 ) {
+    } else if (roundNum >= 10 ) {
             if (scoreTracker >= 1) {
                 messageBox.textContent = humanWin
                 winner = true
@@ -211,7 +211,7 @@ function roundCounter(roundNum) {
                 messageBox.textContent = compWin
                 winner = true
             } else {
-                messageBox.textContent = "The Game is a DRAW, Better Luck Next Time"
+                messageBox.textContent = "The Game is a DRAW, Shiganshina District is Safe... for now"
             }
         }
 }
