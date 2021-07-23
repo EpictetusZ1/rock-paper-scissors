@@ -96,7 +96,7 @@ const splash = document.querySelector(".intro-splash-mobile")
 document.addEventListener("DOMContentLoaded", (evt) => {
     setTimeout(() => {
         splash.classList.add("display-none")
-    }, 10)
+    }, 17000)
 })
 
 let fightBtn = document.querySelectorAll(".fight")
