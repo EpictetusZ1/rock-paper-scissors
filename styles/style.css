@@ -13,9 +13,18 @@
     src: url("../assets/fonts/CloisterBlack.ttf");
 }
 
+.desktop-welcome {
+    visibility: hidden;
+    display: none;
+}
+
 @media (min-width: 500px) {
     .mobile-character-container {
         visibility: hidden;
+    }
+    .desktop-welcome {
+        visibility: visible;
+        display: block;
     }
 }
 
